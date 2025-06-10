@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+input {
+  margin: 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoTracker Web</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>CryptoTracker Web</h1>
+
+  <section>
+    <h2>1. Precios actuales</h2>
+    <button onclick="getPrices()">Mostrar precios</button>
+    <div id="prices"></div>
+  </section>
+
+  <section>
+    <h2>2. Gráfica de una criptomoneda</h2>
+    <input type="text" id="crypto1" placeholder="bitcoin">
+    <input type="number" id="hours1" placeholder="Horas (1-24)">
+    <button onclick="getSingleGraph()">Ver gráfica</button>
+    <img id="graph1" />
+  </section>
+
+  <section>
+    <h2>3. Gráfica de varias criptos</h2>
+    <input type="text" id="cryptos2" placeholder="bitcoin,ethereum,litecoin">
+    <input type="number" id="hours2" placeholder="Horas (1-24)">
+    <button onclick="getMultiGraph()">Ver gráfica</button>
+    <img id="graph2" />
+  </section>
+
+  <section>
+    <h2>4. Regresión lineal</h2>
+    <input type="text" id="crypto3" placeholder="bitcoin">
+    <input type="number" id="start3" placeholder="Hora inicio (0-23)">
+    <input type="number" id="end3" placeholder="Hora fin (1-24)">
+    <button onclick="getRegression()">Ver regresión</button>
+    <p id="equation"></p>
+    <img id="graph3" />
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
