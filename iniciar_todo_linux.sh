@@ -2,36 +2,33 @@
 
 echo "Iniciando servicios de CryptoTracker..."
 
-# Ruta base
 BASE=$(pwd)
+PID_FILE="$BASE/cryptotracker.pids"
+> "$PID_FILE"
 
 # ============================
-# Iniciar DataCollectorService
-cd "$BASE/DataCollectorService"
+cd "$BASE/DataCollectorService" || exit
 echo "Compilando DataCollectorService..."
-javac -cp ".:../shared/json.jar" *.java
-gnome-terminal -- bash -c "java -cp .:../shared/json.jar Main; exec bash"
+javac -encoding UTF-8 -cp ".:../shared/json.jar" *.java
+java -cp .:../shared/json.jar Main & echo $! >> "$PID_FILE"
 
 # ============================
-# Iniciar CryptoPriceAPI
-cd "$BASE/CryptoPriceAPI"
+cd "$BASE/CryptoPriceAPI" || exit
 echo "Compilando CryptoPriceAPI..."
-javac -cp ".:../shared/json.jar" *.java
-gnome-terminal -- bash -c "java -cp .:../shared/json.jar WebServer; exec bash"
+javac -encoding UTF-8 -cp ".:../shared/json.jar" *.java
+java -cp .:../shared/json.jar WebServer & echo $! >> "$PID_FILE"
 
 # ============================
-# Iniciar GraphService
-cd "$BASE/GraphService"
+cd "$BASE/GraphService" || exit
 echo "Compilando GraphService..."
-javac -cp ".:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar" *.java
-gnome-terminal -- bash -c "java -cp .:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar GraphServer; exec bash"
+javac -encoding UTF-8 -cp ".:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar" *.java
+java -cp .:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar GraphServer & echo $! >> "$PID_FILE"
 
 # ============================
-# Iniciar RegressionService
-cd "$BASE/RegressionService"
+cd "$BASE/RegressionService" || exit
 echo "Compilando RegressionService..."
-javac -cp ".:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar" *.java
-gnome-terminal -- bash -c "java -cp .:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar RegressionServer; exec bash"
+javac -encoding UTF-8 -cp ".:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar" *.java
+java -cp .:../shared/json.jar:../shared/jfreechart.jar:../shared/jcommon.jar RegressionServer & echo $! >> "$PID_FILE"
 
 cd "$BASE"
 echo "Todos los servicios están en ejecución."
