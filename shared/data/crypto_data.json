@@ -1130,5 +1130,20 @@
       "bitcoin": {"usd": 108244}
     },
     "timestamp": "2025-06-29T17:27:15.963337411"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169533},
+      "ethereum": {"usd": 2502.91},
+      "litecoin": {"usd": 87.99},
+      "polkadot": {"usd": 3.55},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.577398},
+      "binancecoin": {"usd": 655.08},
+      "solana": {"usd": 153.29},
+      "tron": {"usd": 0.276745},
+      "bitcoin": {"usd": 108394}
+    },
+    "timestamp": "2025-06-29T17:55:09.701265741"
   }
 ]
