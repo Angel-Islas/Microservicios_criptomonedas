@@ -650,5 +650,485 @@
       "bitcoin": {"usd": 105633}
     },
     "timestamp": "2025-06-03T22:06:47.875806"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169707},
+      "ethereum": {"usd": 2498.93},
+      "litecoin": {"usd": 88.26},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.582636},
+      "binancecoin": {"usd": 654.51},
+      "solana": {"usd": 153.88},
+      "tron": {"usd": 0.275992},
+      "bitcoin": {"usd": 108201}
+    },
+    "timestamp": "2025-06-29T16:51:39.856208674"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169542},
+      "ethereum": {"usd": 2502.63},
+      "litecoin": {"usd": 88.25},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581797},
+      "binancecoin": {"usd": 655.07},
+      "solana": {"usd": 153.69},
+      "tron": {"usd": 0.276097},
+      "bitcoin": {"usd": 108170}
+    },
+    "timestamp": "2025-06-29T16:57:16.808836266"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169542},
+      "ethereum": {"usd": 2502.63},
+      "litecoin": {"usd": 88.25},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581797},
+      "binancecoin": {"usd": 655.07},
+      "solana": {"usd": 153.69},
+      "tron": {"usd": 0.276097},
+      "bitcoin": {"usd": 108170}
+    },
+    "timestamp": "2025-06-29T16:58:15.900254044"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169472},
+      "ethereum": {"usd": 2502.52},
+      "litecoin": {"usd": 88.22},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580961},
+      "binancecoin": {"usd": 654.74},
+      "solana": {"usd": 153.38},
+      "tron": {"usd": 0.276048},
+      "bitcoin": {"usd": 108134}
+    },
+    "timestamp": "2025-06-29T16:59:15.963266083"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169472},
+      "ethereum": {"usd": 2502.52},
+      "litecoin": {"usd": 88.22},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580961},
+      "binancecoin": {"usd": 654.74},
+      "solana": {"usd": 153.38},
+      "tron": {"usd": 0.276048},
+      "bitcoin": {"usd": 108134}
+    },
+    "timestamp": "2025-06-29T17:00:15.878308066"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169432},
+      "ethereum": {"usd": 2502.1},
+      "litecoin": {"usd": 88.19},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580723},
+      "binancecoin": {"usd": 654.65},
+      "solana": {"usd": 153.3},
+      "tron": {"usd": 0.276018},
+      "bitcoin": {"usd": 108138}
+    },
+    "timestamp": "2025-06-29T17:01:15.966553053"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169432},
+      "ethereum": {"usd": 2502.1},
+      "litecoin": {"usd": 88.19},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580723},
+      "binancecoin": {"usd": 654.65},
+      "solana": {"usd": 153.3},
+      "tron": {"usd": 0.276018},
+      "bitcoin": {"usd": 108138}
+    },
+    "timestamp": "2025-06-29T17:02:15.883307058"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169547},
+      "ethereum": {"usd": 2504.3},
+      "litecoin": {"usd": 88.25},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581014},
+      "binancecoin": {"usd": 654.87},
+      "solana": {"usd": 153.33},
+      "tron": {"usd": 0.276029},
+      "bitcoin": {"usd": 108136}
+    },
+    "timestamp": "2025-06-29T17:03:15.958374962"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169656},
+      "ethereum": {"usd": 2510.87},
+      "litecoin": {"usd": 88.31},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581201},
+      "binancecoin": {"usd": 654.97},
+      "solana": {"usd": 153.35},
+      "tron": {"usd": 0.27604},
+      "bitcoin": {"usd": 108148}
+    },
+    "timestamp": "2025-06-29T17:04:16.316358313"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169656},
+      "ethereum": {"usd": 2510.87},
+      "litecoin": {"usd": 88.31},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581201},
+      "binancecoin": {"usd": 654.97},
+      "solana": {"usd": 153.35},
+      "tron": {"usd": 0.27604},
+      "bitcoin": {"usd": 108148}
+    },
+    "timestamp": "2025-06-29T17:05:16.109555849"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169748},
+      "ethereum": {"usd": 2513.98},
+      "litecoin": {"usd": 88.38},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581484},
+      "binancecoin": {"usd": 655.15},
+      "solana": {"usd": 153.43},
+      "tron": {"usd": 0.276103},
+      "bitcoin": {"usd": 108179}
+    },
+    "timestamp": "2025-06-29T17:06:16.002993005"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169746},
+      "ethereum": {"usd": 2515.55},
+      "litecoin": {"usd": 88.37},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581707},
+      "binancecoin": {"usd": 655.2},
+      "solana": {"usd": 153.46},
+      "tron": {"usd": 0.276105},
+      "bitcoin": {"usd": 108187}
+    },
+    "timestamp": "2025-06-29T17:07:16.280775531"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169746},
+      "ethereum": {"usd": 2515.55},
+      "litecoin": {"usd": 88.37},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.581707},
+      "binancecoin": {"usd": 655.2},
+      "solana": {"usd": 153.46},
+      "tron": {"usd": 0.276105},
+      "bitcoin": {"usd": 108187}
+    },
+    "timestamp": "2025-06-29T17:08:16.585332391"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169588},
+      "ethereum": {"usd": 2514.39},
+      "litecoin": {"usd": 88.33},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580944},
+      "binancecoin": {"usd": 655.12},
+      "solana": {"usd": 153.41},
+      "tron": {"usd": 0.276092},
+      "bitcoin": {"usd": 108174}
+    },
+    "timestamp": "2025-06-29T17:09:16.144974009"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169588},
+      "ethereum": {"usd": 2514.39},
+      "litecoin": {"usd": 88.33},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580944},
+      "binancecoin": {"usd": 655.12},
+      "solana": {"usd": 153.41},
+      "tron": {"usd": 0.276092},
+      "bitcoin": {"usd": 108174}
+    },
+    "timestamp": "2025-06-29T17:10:15.858883105"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.16952},
+      "ethereum": {"usd": 2513.34},
+      "litecoin": {"usd": 88.3},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580908},
+      "binancecoin": {"usd": 655.2},
+      "solana": {"usd": 153.35},
+      "tron": {"usd": 0.276042},
+      "bitcoin": {"usd": 108157}
+    },
+    "timestamp": "2025-06-29T17:11:15.970472824"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.16952},
+      "ethereum": {"usd": 2513.34},
+      "litecoin": {"usd": 88.3},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580908},
+      "binancecoin": {"usd": 655.2},
+      "solana": {"usd": 153.35},
+      "tron": {"usd": 0.276042},
+      "bitcoin": {"usd": 108157}
+    },
+    "timestamp": "2025-06-29T17:12:15.918825355"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169397},
+      "ethereum": {"usd": 2512.41},
+      "litecoin": {"usd": 88.23},
+      "polkadot": {"usd": 3.58},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580571},
+      "binancecoin": {"usd": 655.13},
+      "solana": {"usd": 153.32},
+      "tron": {"usd": 0.276027},
+      "bitcoin": {"usd": 108163}
+    },
+    "timestamp": "2025-06-29T17:13:15.977250625"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169397},
+      "ethereum": {"usd": 2512.41},
+      "litecoin": {"usd": 88.23},
+      "polkadot": {"usd": 3.58},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580571},
+      "binancecoin": {"usd": 655.13},
+      "solana": {"usd": 153.32},
+      "tron": {"usd": 0.276027},
+      "bitcoin": {"usd": 108163}
+    },
+    "timestamp": "2025-06-29T17:14:15.908167346"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169263},
+      "ethereum": {"usd": 2511.16},
+      "litecoin": {"usd": 88.22},
+      "polkadot": {"usd": 3.58},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580304},
+      "binancecoin": {"usd": 654.83},
+      "solana": {"usd": 153.29},
+      "tron": {"usd": 0.276009},
+      "bitcoin": {"usd": 108147}
+    },
+    "timestamp": "2025-06-29T17:15:15.962478560"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169263},
+      "ethereum": {"usd": 2511.16},
+      "litecoin": {"usd": 88.22},
+      "polkadot": {"usd": 3.58},
+      "ripple": {"usd": 2.22},
+      "cardano": {"usd": 0.580304},
+      "binancecoin": {"usd": 654.83},
+      "solana": {"usd": 153.29},
+      "tron": {"usd": 0.276009},
+      "bitcoin": {"usd": 108147}
+    },
+    "timestamp": "2025-06-29T17:16:15.897527461"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169114},
+      "ethereum": {"usd": 2509.35},
+      "litecoin": {"usd": 88.18},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579829},
+      "binancecoin": {"usd": 654.76},
+      "solana": {"usd": 153.2},
+      "tron": {"usd": 0.275999},
+      "bitcoin": {"usd": 108130}
+    },
+    "timestamp": "2025-06-29T17:17:15.982396174"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169114},
+      "ethereum": {"usd": 2509.35},
+      "litecoin": {"usd": 88.18},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579829},
+      "binancecoin": {"usd": 654.76},
+      "solana": {"usd": 153.2},
+      "tron": {"usd": 0.275999},
+      "bitcoin": {"usd": 108130}
+    },
+    "timestamp": "2025-06-29T17:18:15.888023779"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.168944},
+      "ethereum": {"usd": 2505.74},
+      "litecoin": {"usd": 88.1},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579272},
+      "binancecoin": {"usd": 654.55},
+      "solana": {"usd": 153.08},
+      "tron": {"usd": 0.275981},
+      "bitcoin": {"usd": 108110}
+    },
+    "timestamp": "2025-06-29T17:19:15.948769006"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.168944},
+      "ethereum": {"usd": 2505.74},
+      "litecoin": {"usd": 88.1},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579272},
+      "binancecoin": {"usd": 654.55},
+      "solana": {"usd": 153.08},
+      "tron": {"usd": 0.275981},
+      "bitcoin": {"usd": 108110}
+    },
+    "timestamp": "2025-06-29T17:20:15.875393204"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.168948},
+      "ethereum": {"usd": 2503.34},
+      "litecoin": {"usd": 88.07},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579183},
+      "binancecoin": {"usd": 654.57},
+      "solana": {"usd": 153.08},
+      "tron": {"usd": 0.275995},
+      "bitcoin": {"usd": 108122}
+    },
+    "timestamp": "2025-06-29T17:21:15.962938822"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.168948},
+      "ethereum": {"usd": 2503.34},
+      "litecoin": {"usd": 88.07},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579183},
+      "binancecoin": {"usd": 654.57},
+      "solana": {"usd": 153.08},
+      "tron": {"usd": 0.275995},
+      "bitcoin": {"usd": 108122}
+    },
+    "timestamp": "2025-06-29T17:22:15.905918036"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169034},
+      "ethereum": {"usd": 2503.62},
+      "litecoin": {"usd": 88.06},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579249},
+      "binancecoin": {"usd": 654.62},
+      "solana": {"usd": 153.12},
+      "tron": {"usd": 0.276019},
+      "bitcoin": {"usd": 108132}
+    },
+    "timestamp": "2025-06-29T17:23:15.957853931"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169034},
+      "ethereum": {"usd": 2503.62},
+      "litecoin": {"usd": 88.06},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579249},
+      "binancecoin": {"usd": 654.62},
+      "solana": {"usd": 153.12},
+      "tron": {"usd": 0.276019},
+      "bitcoin": {"usd": 108132}
+    },
+    "timestamp": "2025-06-29T17:24:15.891312627"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169072},
+      "ethereum": {"usd": 2503.63},
+      "litecoin": {"usd": 88.04},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579461},
+      "binancecoin": {"usd": 655.04},
+      "solana": {"usd": 153.15},
+      "tron": {"usd": 0.27605},
+      "bitcoin": {"usd": 108185}
+    },
+    "timestamp": "2025-06-29T17:25:19.388247886"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.169072},
+      "ethereum": {"usd": 2503.63},
+      "litecoin": {"usd": 88.04},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579461},
+      "binancecoin": {"usd": 655.04},
+      "solana": {"usd": 153.15},
+      "tron": {"usd": 0.27605},
+      "bitcoin": {"usd": 108185}
+    },
+    "timestamp": "2025-06-29T17:26:15.860405357"
+  },
+  {
+    "data": {
+      "dogecoin": {"usd": 0.1692},
+      "ethereum": {"usd": 2505.44},
+      "litecoin": {"usd": 88.08},
+      "polkadot": {"usd": 3.57},
+      "ripple": {"usd": 2.21},
+      "cardano": {"usd": 0.579799},
+      "binancecoin": {"usd": 655.27},
+      "solana": {"usd": 153.3},
+      "tron": {"usd": 0.276194},
+      "bitcoin": {"usd": 108244}
+    },
+    "timestamp": "2025-06-29T17:27:15.963337411"
   }
 ]
