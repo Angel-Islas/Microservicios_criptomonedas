@@ -1,0 +1,9 @@
+# Dockerfile.base
+FROM openjdk:17-alpine
+
+WORKDIR /app
+
+COPY shared /app/shared
+COPY . /app
+
+CMD ["java", "-version"]

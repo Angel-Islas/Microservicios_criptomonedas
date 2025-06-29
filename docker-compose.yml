@@ -1,0 +1,65 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: crypto_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  datacollector:
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    working_dir: /app/DataCollectorService
+    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar *.java && java -cp .:/app/shared/json.jar Main"
+    depends_on:
+      - db
+
+  cryptopriceapi:
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    ports:
+      - "8080:8080"
+    working_dir: /app/CryptoPriceAPI
+    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar *.java && java -cp .:/app/shared/json.jar WebServer"
+    depends_on:
+      - db
+
+  graphservice:
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    ports:
+      - "8081:8081"
+    working_dir: /app/GraphService
+    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar *.java && java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar GraphServer"
+    depends_on:
+      - db
+
+  regressionservice:
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    ports:
+      - "8082:8082"
+    working_dir: /app/RegressionService
+    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar *.java && java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar RegressionServer"
+    depends_on:
+      - db
+
+  frontend:
+    image: nginx:alpine
+    container_name: frontend
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+    ports:
+      - "8083:80"
+
+volumes:
+  pg_data:
