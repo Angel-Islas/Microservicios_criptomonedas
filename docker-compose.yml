@@ -2,23 +2,48 @@ services:
   db:
     image: postgres:latest
     container_name: postgres_db
+    hostname: postgres_db
     environment:
       POSTGRES_DB: crypto_db
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d crypto_db"]
+      interval: 2s
+      timeout: 2s
+      retries: 10
+
+  dbinit:
+    build:
+      context: .
+      dockerfile: Dockerfile.base
+    working_dir: /app/DatabaseService
+    environment:
+      - DB_HOST=postgres_db
+    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/postgresql-42.7.7.jar *.java && java -cp .:/app/shared/json.jar:/app/shared/postgresql-42.7.7.jar DatabaseSeeder"
+    depends_on:
+      db:
+        condition: service_healthy
 
   datacollector:
     build:
       context: .
       dockerfile: Dockerfile.base
+    environment:
+      - DB_HOST=postgres_db
     working_dir: /app/DataCollectorService
-    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar *.java && java -cp .:/app/shared/json.jar Main"
+    command: >
+      sh -c "
+        javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/postgresql-42.7.7.jar:/app/DatabaseService *.java /app/DatabaseService/*.java &&
+        java -cp .:/app/shared/json.jar:/app/shared/postgresql-42.7.7.jar:/app/DatabaseService Main
+      "
     depends_on:
       - db
+      - dbinit
 
   cryptopriceapi:
     build:
@@ -27,9 +52,14 @@ services:
     ports:
       - "8080:8080"
     working_dir: /app/CryptoPriceAPI
-    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar *.java && java -cp .:/app/shared/json.jar WebServer"
+    command: >
+      sh -c "
+        javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/postgresql-42.7.7.jar:/app/DatabaseService *.java /app/DatabaseService/*.java &&
+        java -cp .:/app/shared/json.jar:/app/shared/postgresql-42.7.7.jar:/app/CryptoPriceAPI:/app/DatabaseService WebServer
+      "
     depends_on:
       - db
+      - dbinit
 
   graphservice:
     build:
@@ -41,6 +71,7 @@ services:
     command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar *.java && java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar GraphServer"
     depends_on:
       - db
+      - dbinit
 
   regressionservice:
     build:
@@ -52,6 +83,7 @@ services:
     command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar *.java && java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar RegressionServer"
     depends_on:
       - db
+      - dbinit
 
   frontend:
     image: nginx:alpine
@@ -60,6 +92,11 @@ services:
       - ./index.html:/usr/share/nginx/html/index.html:ro
     ports:
       - "8083:80"
+    depends_on:
+      - datacollector
+      - cryptopriceapi
+      - graphservice
+      - regressionservice
 
 volumes:
   pg_data:

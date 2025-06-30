@@ -18,7 +18,7 @@ Este proyecto implementa una arquitectura de microservicios en Java para el segu
 - [Docker Compose](https://docs.docker.com/compose/)
 > **Nota:** En sistemas Linux, puede que necesites permisos de root (`sudo`) para ejecutar los comandos de Docker.
 
-## Uso con docker
+## Uso
 
 Clona este repositorio y navega a la carpeta principal:
 
@@ -52,29 +52,6 @@ Por ejemplo, para ver los logs de la base de datos:
 ```sh
 docker compose logs db
 ```
-
-## Uso sin docker
-Clona este repositorio y navega a la carpeta principal:
-
-```sh
-git clone <url-del-repo>
-cd Microservicios_criptomonedas
-```
-
-### Levantar todos los servicios
-```sh
-./iniciar_todo_linux.sh
-```
-Esto iniciará todos los servicios en segundo plano y mostrará los logs en la terminal conforme vayan saliendo.
-
-### Mostrar la vista principal
-En este caso, al no tener un servicio dedicado, se debe ejecutar el `index.html` de manera manual, es decir, dando doble click al archivo o en una **terminal de powershell** colocando el comando `./index.html` para visualizarlo en el navegador y pueda interactuar con el sistema.
-
-### Detener los servicios
-```sh
-./detener_todo_linux.sh
-```
-Esto detendra todos los servicios en segundo plano, matando los procesos previamente guardados en el archivo `cryptotracker.pids`
 
 ## Notas adicionales
 - Si usas Linux y no tienes permisos para Docker, antepone sudo a los comandos, por ejemplo:

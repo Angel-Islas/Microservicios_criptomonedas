@@ -17,6 +17,6 @@ public class Main {
                     System.out.println("Error al obtener precios: " + e.getMessage());
                 }
             }
-        }, 0, 60000); // cada minuto
+        }, 0, 1000 * 60 * 1); // Actualizar cada minuto
     }
 }

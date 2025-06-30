@@ -1,13 +1,6 @@
 [
   {
     "data": {
-      "ethereum": {"usd": 3700},
-      "bitcoin": {"usd": 68100}
-    },
-    "timestamp": "2025-06-02T10:00:00"
-  },
-  {
-    "data": {
       "dogecoin": {"usd": 0.192181},
       "ethereum": {"usd": 2547.49},
       "litecoin": {"usd": 88.93},
