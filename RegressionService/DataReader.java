@@ -1,65 +1,34 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataReader {
-    private static final String DB_FILE = "../shared/data/crypto_data.json";
-
     public static List<DataPoint> readCryptoHistory(String crypto, int hours) {
         List<DataPoint> list = new ArrayList<>();
-
         try {
-            String content = new String(Files.readAllBytes(Paths.get(DB_FILE)));
-            JSONArray log = new JSONArray(content);
-
-            int count = 0;
-            for (int i = log.length() - 1; i >= 0 && count < hours * 60; i--) {
-                JSONObject entry = log.getJSONObject(i);
-                JSONObject data = entry.getJSONObject("data");
-
-                if (data.has(crypto)) {
-                    double price = data.getJSONObject(crypto).getDouble("usd");
-                    String timestamp = entry.getString("timestamp");
-                    list.add(new DataPoint(timestamp, price));
-                    count++;
-                }
-            }
+            List<Crypto> registros = CryptoRepository.findByNamesAndRecentHours(List.of(crypto), hours);
+            for (Crypto c : registros)
+                list.add(new DataPoint(c.timestamp.toLocalDateTime(), c.price));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return list;
     }
 
-    public static List<DataPoint> readCryptoHistoryBetweenHours(String crypto, int startHour, int endHour) {
-        List<DataPoint> list = new ArrayList<>();
-
+    public static java.util.Map<String, List<DataPoint>> readMultipleCryptoHistory(List<String> cryptos, int hours) {
+        java.util.Map<String, List<DataPoint>> result = new java.util.HashMap<>();
         try {
-            String content = new String(Files.readAllBytes(Paths.get(DB_FILE)));
-            JSONArray log = new JSONArray(content);
-
-            for (int i = 0; i < log.length(); i++) {
-                JSONObject obj = log.getJSONObject(i);
-                String timestamp = obj.getString("timestamp");
-                JSONObject data = obj.getJSONObject("data");
-
-                int hour = Integer.parseInt(timestamp.substring(11, 13));
-
-                if (hour >= startHour && hour < endHour && data.has(crypto)) {
-                    double price = data.getJSONObject(crypto).getDouble("usd");
-                    list.add(new DataPoint(timestamp, price));
-                }
+            List<Crypto> registros = CryptoRepository.findByNamesAndRecentHours(cryptos, hours);
+            for (Crypto c : registros) {
+                String key = c.name;
+                result.putIfAbsent(key, new ArrayList<>());
+                result.get(key).add(new DataPoint(c.timestamp.toLocalDateTime(), c.price));
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return list;
+        return result;
     }
 }

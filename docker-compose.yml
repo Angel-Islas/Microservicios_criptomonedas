@@ -84,7 +84,11 @@ services:
     ports:
       - "8082:8082"
     working_dir: /app/RegressionService
-    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar *.java && java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar RegressionServer"
+    command: >
+      sh -c "
+        javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar:/app/shared/postgresql-42.7.7.jar:/app/DatabaseService *.java /app/DatabaseService/*.java &&
+        java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar:/app/shared/postgresql-42.7.7.jar:/app/DatabaseService RegressionServer
+      "
     depends_on:
       - db
       - dbinit

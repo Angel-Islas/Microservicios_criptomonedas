@@ -1,8 +1,10 @@
+import java.time.LocalDateTime;
+
 public class DataPoint {
-    public String timestamp;
+    public LocalDateTime timestamp;
     public double price;
 
-    public DataPoint(String timestamp, double price) {
+    public DataPoint(LocalDateTime timestamp, double price) {
         this.timestamp = timestamp;
         this.price = price;
     }

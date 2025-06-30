@@ -31,63 +31,6 @@ public class CryptoRepository {
         return list;
     }
 
-    public static Crypto findByName(String name) throws SQLException {
-        String sql = "SELECT * FROM cryptos WHERE name = ?";
-        try (Connection conn = DatabaseConnector.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, name);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    return new Crypto(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getDouble("price"),
-                            rs.getTimestamp("timestamp"));
-                }
-            }
-        }
-        return null;
-    }
-
-    public static List<Crypto> findByPriceRange(double minPrice, double maxPrice) throws SQLException {
-        List<Crypto> list = new ArrayList<>();
-        String sql = "SELECT * FROM cryptos WHERE price BETWEEN ? AND ?";
-        try (Connection conn = DatabaseConnector.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setDouble(1, minPrice);
-            stmt.setDouble(2, maxPrice);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    list.add(new Crypto(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getDouble("price"),
-                            rs.getTimestamp("timestamp")));
-                }
-            }
-        }
-        return list;
-    }
-
-    public static List<Crypto> findByTimestamp(Timestamp timestamp) throws SQLException {
-        List<Crypto> list = new ArrayList<>();
-        String sql = "SELECT * FROM cryptos WHERE timestamp = ?";
-        try (Connection conn = DatabaseConnector.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setTimestamp(1, timestamp);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    list.add(new Crypto(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getDouble("price"),
-                            rs.getTimestamp("timestamp")));
-                }
-            }
-        }
-        return list;
-    }
-
     public static List<Crypto> findLatestSnapshot() throws SQLException {
         String sql = """
                     SELECT * FROM cryptos WHERE timestamp = (
