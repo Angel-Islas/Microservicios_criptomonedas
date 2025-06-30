@@ -60,12 +60,17 @@ public class RegressionServer {
 
         File imageFile = new File(outputPath);
         byte[] imageBytes = java.nio.file.Files.readAllBytes(imageFile.toPath());
+        String imageBase64 = java.util.Base64.getEncoder().encodeToString(imageBytes);
 
-        exchange.getResponseHeaders().add("Content-Type", "image/png");
+        String equation = "y = " + coef[0] + "x + " + coef[1];
+        String jsonResponse = String.format("{\"equation\":\"%s\",\"image_base64\":\"%s\"}", equation, imageBase64);
+
+        exchange.getResponseHeaders().add("Content-Type", "application/json");
         exchange.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
-        exchange.sendResponseHeaders(200, imageBytes.length);
+        byte[] responseBytes = jsonResponse.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+        exchange.sendResponseHeaders(200, responseBytes.length);
         OutputStream os = exchange.getResponseBody();
-        os.write(imageBytes);
+        os.write(responseBytes);
         os.close();
     }
 }
