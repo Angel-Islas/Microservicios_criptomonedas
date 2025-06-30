@@ -115,7 +115,7 @@ public class CryptoRepository {
 
         String placeholders = String.join(",", Collections.nCopies(names.size(), "?"));
         String sql = "SELECT * FROM cryptos WHERE name IN (" + placeholders
-                + ") AND timestamp >= NOW() - INTERVAL '? hours' ORDER BY timestamp";
+                + ") AND timestamp >= NOW() - INTERVAL '" + hours + " HOURS' ORDER BY timestamp";
 
         try (Connection conn = DatabaseConnector.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -124,7 +124,6 @@ public class CryptoRepository {
             for (String name : names) {
                 stmt.setString(i++, name);
             }
-            stmt.setInt(i, hours);
 
             List<Crypto> list = new ArrayList<>();
             try (ResultSet rs = stmt.executeQuery()) {

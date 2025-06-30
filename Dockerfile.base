@@ -1,5 +1,6 @@
-# Dockerfile.base
 FROM openjdk:17-alpine
+
+RUN apk add --no-cache fontconfig ttf-dejavu freetype
 
 WORKDIR /app
 

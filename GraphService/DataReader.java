@@ -1,36 +1,43 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLException;
+import java.util.*;
 
 public class DataReader {
-    private static final String DB_FILE = "../shared/data/crypto_data.json";
 
     public static List<GraphGenerator.DataPoint> readCryptoHistory(String crypto, int hours) {
         List<GraphGenerator.DataPoint> list = new ArrayList<>();
 
         try {
-            String content = new String(Files.readAllBytes(Paths.get(DB_FILE)));
-            JSONArray log = new JSONArray(content);
+            List<String> cryptos = List.of(crypto);
+            List<Crypto> records = CryptoRepository.findByNamesAndRecentHours(cryptos, hours);
 
-            int count = 0;
-            for (int i = log.length() - 1; i >= 0 && count < hours * 60; i--) {
-                JSONObject entry = log.getJSONObject(i);
-                JSONObject data = entry.getJSONObject("data");
-                if (data.has(crypto)) {
-                    double price = data.getJSONObject(crypto).getDouble("usd");
-                    String timestamp = entry.getString("timestamp");
-                    list.add(new GraphGenerator.DataPoint(timestamp, price));
-                    count++;
-                }
+            for (Crypto c : records) {
+                list.add(new GraphGenerator.DataPoint(c.timestamp.toLocalDateTime(), c.price));
             }
-        } catch (Exception e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return list;
+    }
+
+    public static Map<String, List<GraphGenerator.DataPoint>> readMultipleCryptoHistory(List<String> cryptos,
+            int hours) {
+        Map<String, List<GraphGenerator.DataPoint>> result = new HashMap<>();
+
+        try {
+            List<Crypto> records = CryptoRepository.findByNamesAndRecentHours(cryptos, hours);
+
+            for (String name : cryptos)
+                result.put(name, new ArrayList<>());
+
+            for (Crypto c : records)
+                result.get(c.name).add(new GraphGenerator.DataPoint(c.timestamp.toLocalDateTime(), c.price));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }

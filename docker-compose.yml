@@ -68,7 +68,11 @@ services:
     ports:
       - "8081:8081"
     working_dir: /app/GraphService
-    command: sh -c "javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar *.java && java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar GraphServer"
+    command: >
+      sh -c "
+        javac -encoding UTF-8 -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar:/app/shared/postgresql-42.7.7.jar /app/DatabaseService/*.java *.java &&
+        java -cp .:/app/shared/json.jar:/app/shared/jfreechart.jar:/app/shared/jcommon.jar:/app/shared/postgresql-42.7.7.jar:/app/DatabaseService GraphServer
+      "
     depends_on:
       - db
       - dbinit
